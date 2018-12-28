@@ -20,6 +20,7 @@ import org.springframework.util.StringUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.Date;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -57,5 +58,9 @@ public class UserService {
         User u = new User();
         BeanUtils.copyProperties(dto, u);
         userMapper.insert(u);
+    }
+
+    public List<User> getUser() {
+        return userMapper.selectList(null);
     }
 }
