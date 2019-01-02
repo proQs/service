@@ -15,9 +15,11 @@ import java.io.Serializable;
 @TableName("user")
 public class User implements Serializable {
 
-    private String name;
+    private String realname;
 
     private String mobile;
 
     private String cardno;
+
+    private String email;
 }

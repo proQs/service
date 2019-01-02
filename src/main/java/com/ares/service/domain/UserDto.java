@@ -11,11 +11,13 @@ public class UserDto {
 
     private String timestamp;
 
-    private String name;
+    private String realname;
 
     private String sign;
 
     private String mobile;
 
     private String cardno;
+
+    private String email;
 }

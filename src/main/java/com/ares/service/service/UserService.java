@@ -42,7 +42,7 @@ public class UserService {
         if (!encodeStr.substring(0, 8).equalsIgnoreCase(dto.getSign())) {
             throw new BizException("10001", "签名不合法");
         }
-        if (StringUtils.isEmpty(dto.getName())) {
+        if (StringUtils.isEmpty(dto.getRealname())) {
             throw new BizException("10002", "姓名为空");
         }
         if (StringUtils.isEmpty(dto.getMobile())) {
@@ -50,6 +50,9 @@ public class UserService {
         }
         if (StringUtils.isEmpty(dto.getCardno())) {
             throw new BizException("10004", "身份证为空");
+        }
+        if (StringUtils.isEmpty(dto.getEmail())) {
+            throw new BizException("10006", "邮箱为空");
         }
         int count = userMapper.selectCount(new EntityWrapper<User>().eq("mobile", dto.getMobile()));
         if (count > 0) {
