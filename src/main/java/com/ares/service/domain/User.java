@@ -22,4 +22,6 @@ public class User implements Serializable {
     private String cardno;
 
     private String email;
+
+    private String timestamp;
 }
