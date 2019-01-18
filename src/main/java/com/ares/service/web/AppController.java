@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.List;
 
 @RestController
@@ -32,6 +34,14 @@ public class AppController {
     @RequestMapping("/api/getUser")
     @CrossOrigin
     public List<User> getUser(){
-        return userService.getUser();
+        List<User> user = userService.getUser();
+        user.forEach(u -> {
+            try {
+                u.setRealname(URLDecoder.decode(u.getRealname(), "UTF-8"));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        });
+        return user;
     }
 }
