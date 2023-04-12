@@ -1,0 +1,25 @@
+server:
+  port: 11059
+  servlet:
+    context-path: /sv
+# 日志配置
+#logging:
+#  config: classpath:logback/logback-prod.xml
+logging:
+  level:
+    com.ares.service: debug
+    org.springframework: warn
+    org.spring.springboot.dao: debug
+    okhttp3.OkHttpClient: error
+
+# 数据源配置
+spring:
+  datasource:
+    ## mysql
+    url: jdbc:mysql://9.135.135.141:3306/tbasesign?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: UNBGZ*5674aVzs
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+constant:
+  isUseSecurity: true

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql"/>
+
+    <changeSet id="202204151427-001" author="saber">
+        <sql>
+            CREATE TABLE IF NOT EXISTS tb_role (
+                role_id int(11) NOT NULL AUTO_INCREMENT COMMENT '角色编号',
+                role_name varchar(120) DEFAULT NULL COMMENT '角色英文名称',
+                role_name_zh varchar(120) DEFAULT NULL COMMENT '角色中文名称',
+                role_status int(1) DEFAULT '1' COMMENT '状态（1-正常2-无效） 默认1',
+                description text COMMENT '备注',
+                create_time datetime DEFAULT NULL COMMENT '创建时间',
+                modify_time datetime DEFAULT NULL COMMENT '修改时间',
+                PRIMARY KEY (role_id),
+                UNIQUE KEY UK_role_Name (role_name)
+                ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8 COMMENT='角色信息表';
+            INSERT INTO `tb_role` (role_name,role_name_zh,create_time,modify_time)VALUES ('admin', '管理员', now(), now());
+            INSERT INTO `tb_role` (role_name,role_name_zh,create_time,modify_time)VALUES ('developer', '开发者', now(), now());
+        </sql>
+    </changeSet>
+</databaseChangeLog>
