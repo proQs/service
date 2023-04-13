@@ -1,11 +1,3 @@
-/**
- * description: TChainBase
- * <p>
- * author: saberqu
- * date: 2022/3/31 下午4:02
- * copyright Copyright@2022
- **/
-
 package com.ares.service.web;
 
 import com.ares.service.domain.TbRole;

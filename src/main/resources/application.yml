@@ -3,6 +3,25 @@ server:
 spring:
   application:
     name: service
+  datasource:
+    dynamic:
+      druid:
+        initial-size: 1
+        max-active: 300
+        min-idle: 1
+        max-wait: 10000
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 100
+        validation-query: select 1 from dual
+        validation-query-timeout: 30
+        test-on-borrow: false
+        test-on-return: false
+        test-while-idle: true
+        keep-alive: true
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 60000
+        filters: stat,wall,config  #,log4j
+        proxy-filters:
   redis:
     # Redis数据库索引（默认为0）
     database: 0

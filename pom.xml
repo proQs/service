@@ -21,6 +21,7 @@
 		<mybatis-plus.version>3.5.3.1</mybatis-plus.version>
 		<druid.version>1.2.16</druid.version>
 		<joda-time.version>2.12.2</joda-time.version>
+		<dynamic-datasource>3.6.1</dynamic-datasource>
 	</properties>
 
 	<dependencies>
@@ -59,6 +60,11 @@
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 			<version>${joda-time.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+			<version>${dynamic-datasource}</version>
 		</dependency>
 
 		<dependency>

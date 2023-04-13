@@ -5,6 +5,7 @@ import com.ares.service.domain.TbRole;
 import com.ares.service.exception.BizException;
 import com.ares.service.persistence.RoleMapper;
 import com.ares.service.util.JsonTools;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,7 @@ public class RoleService {
     /**
      * query role .
      */
+    @DS("task")
     public List<TbRole> listOfRole(Integer pageNumber, Integer pageSize, Integer roleId,
                                    String roleName)throws BizException {
 
